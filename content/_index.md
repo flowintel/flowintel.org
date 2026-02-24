@@ -7,6 +7,10 @@ toc: false
 
 Flowintel is an open-source platform designed to assist analysts in organizing their cases and tasks. It features a range of tools and functionalities to enhance workflow efficiency.
 
+- <img src="/images/home.png" alt="logo of Flowintel" >
+- <img src="/images/case_example.png" alt="logo of Flowintel">
+- <img src="/images/calendar.png" alt="logo of Flowintel">
+- <img src="/images/news/flowintelxMISP.png" alt="logo of Flowintel">
 
 ## Explore
 
