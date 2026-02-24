@@ -1,0 +1,9 @@
+{{ define "main" }}
+    {{ if .Title }}
+        <h1 class="hx:text-center hx:mt-2 hx:text-4xl hx:font-bold hx:tracking-tight hx:text-slate-900 hx:dark:text-slate-100">
+            {{ .Title }}
+        </h1>
+    {{ end }}
+
+    <div style="width: 90%; margin: 40px auto;" class="content">{{ .Content }}</div>
+{{- end -}}

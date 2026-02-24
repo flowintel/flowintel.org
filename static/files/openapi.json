@@ -1,0 +1,4996 @@
+{
+    "swagger": "2.0",
+    "basePath": "/api",
+    "paths": {
+        "/admin/add_org": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add new organisation",
+                "operationId": "post_add_org",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/AddOrg"
+                        }
+                    }
+                ],
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/add_user": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add new user",
+                "operationId": "post_add_user",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/AddUser"
+                        }
+                    }
+                ],
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/delete_org/{oid}": {
+            "parameters": [
+                {
+                    "description": "id of an org",
+                    "name": "oid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete Org",
+                "operationId": "get_delete_org",
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/delete_user/{id}": {
+            "parameters": [
+                {
+                    "description": "id of a user",
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete user",
+                "operationId": "get_delete_user",
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/edit_org/{id}": {
+            "parameters": [
+                {
+                    "description": "id of an org",
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit org",
+                "operationId": "post_edit_org",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/EditOrg"
+                        }
+                    }
+                ],
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/edit_user/{id}": {
+            "parameters": [
+                {
+                    "description": "id of a user",
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit user",
+                "operationId": "post_edit_user",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/EditUser"
+                        }
+                    }
+                ],
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/org/{oid}": {
+            "parameters": [
+                {
+                    "description": "id of an org",
+                    "name": "oid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get an org",
+                "operationId": "get_get_orgs",
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/orgs": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all orgs",
+                "operationId": "get_get_orgs",
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/roles": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all roles",
+                "operationId": "get_get_roles",
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/user": {
+            "parameters": [
+                {
+                    "description": "last name of a user",
+                    "name": "lastname",
+                    "type": "string",
+                    "in": "query"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a user by name",
+                "operationId": "get_get_user_name",
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/user/{uid}": {
+            "parameters": [
+                {
+                    "description": "id of a user",
+                    "name": "uid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a users",
+                "operationId": "get_get_users",
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/user_matrix_id": {
+            "parameters": [
+                {
+                    "description": "matrix id of a user",
+                    "name": "matrix_id",
+                    "type": "string",
+                    "in": "query"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a user by matrix id",
+                "operationId": "get_get_user_matrix",
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/admin/users": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all users",
+                "operationId": "get_get_users",
+                "tags": [
+                    "admin"
+                ]
+            }
+        },
+        "/analyzer/misp-modules/query": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Receive a result from an external tool",
+                "operationId": "post_query",
+                "parameters": [
+                    {
+                        "description": "Required. List of queries",
+                        "name": "query",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. Type of attributes in entry.Can be only one type",
+                        "name": "input",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. List of modules to run on queries",
+                        "name": "modules",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "analyzer"
+                ]
+            }
+        },
+        "/analyzer/misp-modules/result/{sid}": {
+            "parameters": [
+                {
+                    "description": "uuid of the session of query",
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "See the result of a query",
+                "operationId": "get_result",
+                "tags": [
+                    "analyzer"
+                ]
+            }
+        },
+        "/analyzer/misp-modules/status/{sid}": {
+            "parameters": [
+                {
+                    "description": "uuid of the session of query",
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "See the status of a query",
+                "operationId": "get_status",
+                "tags": [
+                    "analyzer"
+                ]
+            }
+        },
+        "/calendar/feed": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "summary": "Get calendar feed",
+                "description": "Download complete calendar feed (ICS format) for the authenticated user\nReturns an ICS calendar file containing all cases and tasks for the current user.",
+                "operationId": "get_calendar_feed",
+                "tags": [
+                    "calendar"
+                ]
+            }
+        },
+        "/case/all": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all cases",
+                "operationId": "get_get_cases",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/check_case_title_exist": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Check if a case with the title exist",
+                "operationId": "post_check_title",
+                "parameters": [
+                    {
+                        "description": "Required. Title of a case",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/completed": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all completed cases",
+                "operationId": "get_get_cases_completed",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/create": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a case",
+                "operationId": "post_create_case",
+                "parameters": [
+                    {
+                        "description": "Required. Title for a case",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of a case",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Date(%Y-%m-%d)",
+                        "name": "deadline_date",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time(%H-%M)",
+                        "name": "deadline_time",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from taxonomies",
+                        "name": "tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from galaxies",
+                        "name": "clusters",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of custom tags created on the instance",
+                        "name": "custom_tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time required to realize the case",
+                        "name": "time_required",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Specify if a case is private or not. By default a case is public",
+                        "name": "is_private",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Specify if a case is privileged (four-eye-review workflow). Only Admin or Case Admin can set this. By default False",
+                        "name": "privileged_case",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Id of a ticket related to the case",
+                        "name": "ticket_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/create_with_event": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a case",
+                "operationId": "post_create_case_event",
+                "parameters": [
+                    {
+                        "description": "Required. Title for a case",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required, Json of a misp event",
+                        "name": "event",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of a case",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Date(%Y-%m-%d)",
+                        "name": "deadline_date",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time(%H-%M)",
+                        "name": "deadline_time",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from taxonomies",
+                        "name": "tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from galaxies",
+                        "name": "clusters",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of custom tags created on the instance",
+                        "name": "custom_tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time required to realize the case",
+                        "name": "time_required",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Specify if a case is private or not. By default a case is public",
+                        "name": "is_private",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Id of a ticket related to the case",
+                        "name": "ticket_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/get_case_connectors/{cid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all connectors instance for a case",
+                "operationId": "get_get_connectors_case",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/get_connectors": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all connectors and instances",
+                "operationId": "get_get_connectors",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/get_galaxies": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all galaxies",
+                "operationId": "get_get_galaxies",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/get_galaxies_case/{cid}": {
+            "parameters": [
+                {
+                    "description": "List of galaxies",
+                    "name": "galaxies",
+                    "type": "string",
+                    "in": "query"
+                },
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all tags and galaxies in a case",
+                "operationId": "get_get_galaxies_case",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/get_misp_object": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get list of misp object templates",
+                "operationId": "get_get_misp_object_templates",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/get_modules": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all modules",
+                "operationId": "get_get_modules",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/get_tags": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all tags by given taxonomies",
+                "operationId": "post_get_tags",
+                "parameters": [
+                    {
+                        "description": "Required. List of taxonomies",
+                        "name": "taxonomies",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/get_taxonomies": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all taxonomies",
+                "operationId": "get_get_taxonomies",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/get_taxonomies_case/{cid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all tags and taxonomies in a case",
+                "operationId": "get_get_taxonomies_case",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/list_status": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "List all status",
+                "operationId": "get_list_status",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/not_completed": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all not completed cases",
+                "operationId": "get_get_cases_not_completed",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/search": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get cases matching search terms",
+                "operationId": "post_search_case",
+                "parameters": [
+                    {
+                        "description": "Required. Search terms",
+                        "name": "search",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/title": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a case by title",
+                "operationId": "post_get_case_title",
+                "parameters": [
+                    {
+                        "description": "Title of a case",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a case",
+                "operationId": "get_get_case",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/add_attributes/{oid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "oid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add attributes to an existing object",
+                "operationId": "post_add_attributes",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/add_connectors": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add connectors to a case",
+                "operationId": "post_add_connectors_case",
+                "parameters": [
+                    {
+                        "description": "Required. List of connectors instance. Dict with 'name' and 'identifier' as keys.",
+                        "name": "connectors",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/add_note_template": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add a note template to a case",
+                "operationId": "get_add_note_template",
+                "parameters": [
+                    {
+                        "description": "Id of a note template.",
+                        "name": "note_template_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/add_org": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add an org to the case",
+                "operationId": "post_add_org_case",
+                "parameters": [
+                    {
+                        "description": "Name of the organisation",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "id of the organisation",
+                        "name": "oid",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/all_notes": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all notes of a case",
+                "operationId": "get_get_all_notes",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/append_case_note": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Append notes to a case",
+                "operationId": "post_append_note_case",
+                "parameters": [
+                    {
+                        "description": "note to create or modify",
+                        "name": "note",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/call_module_case": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Call a module on a case",
+                "operationId": "post_call_module_case",
+                "parameters": [
+                    {
+                        "description": "Required. Name of the module to call",
+                        "name": "module",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. List of name or id of instances to use for the module",
+                        "name": "instance_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/change_order/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Change the order of the task",
+                "operationId": "post_change_order",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/change_status": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Change the status of the case",
+                "operationId": "post_change_status_case",
+                "parameters": [
+                    {
+                        "description": "Required. Status id",
+                        "name": "status_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/complete": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Complete a case",
+                "operationId": "get_complete_case",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/create_misp_object": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create misp object",
+                "operationId": "post_create_misp_object",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/create_task": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a new task to a case",
+                "operationId": "post_create_task",
+                "parameters": [
+                    {
+                        "description": "Required. Title for a task",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of a task",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Date(%Y-%m-%d)",
+                        "name": "deadline_date",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time(%H-%M)",
+                        "name": "deadline_time",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from taxonomies",
+                        "name": "tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from galaxies",
+                        "name": "clusters",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of galaxies name",
+                        "name": "galaxies",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Dictionnary with connector as key and identifier as value",
+                        "name": "identifier",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of custom tags created on the instance",
+                        "name": "custom_tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time required to realize the task",
+                        "name": "time_required",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/create_template": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a template form case",
+                "operationId": "post_create_template",
+                "parameters": [
+                    {
+                        "description": "Title for the template that will be create",
+                        "name": "title_template",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/delete": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a case",
+                "operationId": "get_delete_case",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/delete_file/{fid}": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of a file",
+                    "name": "fid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a file from a case",
+                "operationId": "get_delete_case_file",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/delete_object/{oid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "oid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete an object from case",
+                "operationId": "get_delete_misp_object",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/download_file/{fid}": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of a file",
+                    "name": "fid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Download a file from a case",
+                "operationId": "get_download_case_file",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/edit": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "id",
+                    "type": "string",
+                    "in": "query"
+                },
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit a case",
+                "operationId": "post_edit_case",
+                "parameters": [
+                    {
+                        "description": "Title for a case",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of a case",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Date(%Y-%m-%d)",
+                        "name": "deadline_date",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time(%H-%M)",
+                        "name": "deadline_time",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from taxonomies",
+                        "name": "tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from galaxies",
+                        "name": "clusters",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of custom tags created on the instance",
+                        "name": "custom_tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Specify if a case is private or not. By default a case is public",
+                        "name": "is_private",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Specify if a case is privileged (four-eye-review workflow). Only Admin or Case Admin can modify this",
+                        "name": "privileged_case",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Id of a ticket related to the case",
+                        "name": "ticket_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/edit_connector/{ciid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "ciid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit connector",
+                "operationId": "post_edit_connectors_case",
+                "parameters": [
+                    {
+                        "description": "Required. Identifier used by modules to identify where to send data.",
+                        "name": "identifier",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/files": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get list of files for a case",
+                "operationId": "get_get_case_files",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/fork": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Fork a case",
+                "operationId": "post_fork_case",
+                "parameters": [
+                    {
+                        "description": "Required. Title for the case",
+                        "name": "case_title_fork",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/get_all_users": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get list of user that can be assign",
+                "operationId": "get_get_all_users",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/get_case_misp_object": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get case list of misp object",
+                "operationId": "get_get_case_misp_object",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/get_correlation_attr/{aid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "aid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get correlation list for an attribute",
+                "operationId": "get_get_correlation_attr",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/get_instance_module": {
+            "parameters": [
+                {
+                    "description": "Name of the module to use",
+                    "name": "module",
+                    "type": "string",
+                    "in": "query"
+                },
+                {
+                    "description": "type of the module",
+                    "name": "type",
+                    "type": "string",
+                    "in": "query"
+                },
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all instances for a module",
+                "operationId": "get_get_instance_modules",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/get_note": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get note of a case",
+                "operationId": "get_get_note",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/get_note_template": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a note template to a case",
+                "operationId": "get_get_note_template",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/history": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get history of a case",
+                "operationId": "get_history",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/merge/{ocid}": {
+            "parameters": [
+                {
+                    "description": "id of the case to merge",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of the case to merge in",
+                    "name": "ocid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Merge a case",
+                "operationId": "get_merge_case",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/misp_object/{oid}/delete_attribute/{aid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "oid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "aid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete an attribute from a misp object",
+                "operationId": "get_delete_misp_attr",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/misp_object/{oid}/edit_attr/{aid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "oid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "aid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit misp object attribute",
+                "operationId": "post_edit_misp_attr",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/modif_content_note_template": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Modify content of note template of a case",
+                "operationId": "post_modif_content_note_template_case",
+                "parameters": [
+                    {
+                        "description": "Content modify of the note template",
+                        "name": "content",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/modif_values_note_template": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Modify values of note template of a case",
+                "operationId": "post_modif_values_note_template_case",
+                "parameters": [
+                    {
+                        "description": "Dictionnary with values",
+                        "name": "values",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/modify_case_note": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit note of a case",
+                "operationId": "post_modif_note_case",
+                "parameters": [
+                    {
+                        "description": "note to create or modify",
+                        "name": "note",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/recurring": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Set a case recurring",
+                "operationId": "post_recurring_case",
+                "parameters": [
+                    {
+                        "description": "Date(%Y-%m-%d)",
+                        "name": "once",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Boolean",
+                        "name": "daily",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Date(%Y-%m-%d). Start date.",
+                        "name": "weekly",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Date(%Y-%m-%d). Start date.",
+                        "name": "monthly",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Boolean",
+                        "name": "remove",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/remove_connector/{ciid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "ciid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Remove a connector",
+                "operationId": "get_remove_connectors",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/remove_note_template": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Remove note template from a case",
+                "operationId": "get_remove_note_template",
+                "parameters": [
+                    {
+                        "description": "Id of a note template.",
+                        "name": "note_template_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/remove_org/{oid}": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of an org",
+                    "name": "oid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add an org to the case",
+                "operationId": "get_remove_org_case",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/tasks": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all tasks for a case",
+                "operationId": "get_get_tasks",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/tasks_finished": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all tasks for a case",
+                "operationId": "get_get_tasks_finished",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case/{cid}/upload_file": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Upload a file to a case",
+                "operationId": "post_upload_case_file",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/case_from_misp/": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a Case from a MISP Event",
+                "operationId": "post_case_misp_event",
+                "parameters": [
+                    {
+                        "description": "Required. Title for the new case",
+                        "name": "case_title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. Id of a case template",
+                        "name": "case_template_id",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. Id of a misp instance",
+                        "name": "misp_instance_id",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. Id of a misp event on the misp instance",
+                        "name": "misp_event_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case_misp"
+                ]
+            }
+        },
+        "/connectors/add_connector": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add a new connector",
+                "operationId": "post_add_connector",
+                "parameters": [
+                    {
+                        "description": "Required. Name of the connector",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of the connector",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Id of an icon",
+                        "name": "icon_select",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/connectors/all": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all Connectors",
+                "operationId": "get_get_connectors",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/connectors/type_select": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get type select for instance",
+                "operationId": "get_get_type_select",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/connectors/{cid}/add_instance": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add a new instance of a connector",
+                "operationId": "post_add_instance",
+                "parameters": [
+                    {
+                        "description": "Required. Name of the connector",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of the connector",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Name of the type. See '/api/connectors/type_select' for more info",
+                        "name": "type_select",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. Url for the instance. Used by module to connect to service",
+                        "name": "url",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Api key used by module to connect to service",
+                        "name": "api_key",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/connectors/{cid}/delete": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete Connector",
+                "operationId": "get_delete_connector",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/connectors/{cid}/edit_connector": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit a connector",
+                "operationId": "post_edit_connector",
+                "parameters": [
+                    {
+                        "description": "Required. Name of the connector",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of the connector",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Id of an icon",
+                        "name": "icon_select",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/connectors/{cid}/edit_instance/{iid}": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "iid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit an instance of a connector",
+                "operationId": "post_edit_instance",
+                "parameters": [
+                    {
+                        "description": "Required. Name of the connector",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of the connector",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Name of the type. See '/api/connectors/type_select' for more info",
+                        "name": "type_select",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. Url for the instance. Used by module to connect to service",
+                        "name": "url",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Api key used by module to connect to service",
+                        "name": "api_key",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/connectors/{cid}/instance/{iid}/delete": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "iid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete an instance of connector",
+                "operationId": "get_delete_instance_connector",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/connectors/{cid}/instances": {
+            "parameters": [
+                {
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get instances of a connector",
+                "operationId": "get_getinstances",
+                "tags": [
+                    "case"
+                ]
+            }
+        },
+        "/custom_tags/add": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add a new custom tag",
+                "operationId": "post_add_custom_tags",
+                "parameters": [
+                    {
+                        "description": "Required. Name of the tag",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. Color that will represent the tag. (#ffffff)",
+                        "name": "color",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Optional. Fontawesome icon (fa-solid fa-bicycle)",
+                        "name": "icon",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "custom_tags"
+                ]
+            }
+        },
+        "/custom_tags/all": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "all custom tags",
+                "operationId": "get_all_custom_tags",
+                "tags": [
+                    "custom_tags"
+                ]
+            }
+        },
+        "/custom_tags/{ctid}": {
+            "parameters": [
+                {
+                    "description": "id of a custom tag",
+                    "name": "ctid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a custom tag",
+                "operationId": "get_get_custom_tag",
+                "tags": [
+                    "custom_tags"
+                ]
+            }
+        },
+        "/custom_tags/{ctid}/delete": {
+            "parameters": [
+                {
+                    "description": "id of a custom tag",
+                    "name": "ctid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a custom tag",
+                "operationId": "get_delete_custom_tag",
+                "tags": [
+                    "custom_tags"
+                ]
+            }
+        },
+        "/custom_tags/{ctid}/edit": {
+            "parameters": [
+                {
+                    "name": "ctid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit a custom tag",
+                "operationId": "post_edit_custom_tags",
+                "parameters": [
+                    {
+                        "description": "Required. Name of the tag",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Required. Color that will represent the tag. (#ffffff)",
+                        "name": "color",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Optional. Fontawesome icon (fa-solid fa-bicycle)",
+                        "name": "icon",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "custom_tags"
+                ]
+            }
+        },
+        "/importer/case": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Import a case. JSON is required",
+                "operationId": "post_import_case",
+                "tags": [
+                    "importer"
+                ]
+            }
+        },
+        "/importer/template": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Import a case template. JSON is required",
+                "operationId": "post_import_case_template",
+                "tags": [
+                    "importer"
+                ]
+            }
+        },
+        "/my_assignment/user": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all cases",
+                "operationId": "get_my_assignment",
+                "tags": [
+                    "my_assignment"
+                ]
+            }
+        },
+        "/task/list_status": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "List all status",
+                "operationId": "get_list_status",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/title": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a task by title",
+                "operationId": "post_get_task_title",
+                "parameters": [
+                    {
+                        "description": "Title of a task",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a task by id",
+                "operationId": "get_get_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/add_connectors": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add connectors to a task",
+                "operationId": "post_add_connectors_task",
+                "parameters": [
+                    {
+                        "description": "Required. List of connectors instance. Dict with 'name' and 'identifier' as keys.",
+                        "name": "connectors",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/assign_users": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Assign users to a task",
+                "operationId": "post_assign_users",
+                "parameters": [
+                    {
+                        "description": "List of user id",
+                        "name": "users_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/change_status": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Change status of a task",
+                "operationId": "post_change_status",
+                "parameters": [
+                    {
+                        "description": "Id of the new status",
+                        "name": "status_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/complete": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Complete a task",
+                "operationId": "get_complete_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/complete_subtask/{sid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Complete a subtask",
+                "operationId": "get_complete_subtask",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/create_note": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a new note for a task",
+                "operationId": "post_create_note_task",
+                "parameters": [
+                    {
+                        "description": "note to create",
+                        "name": "note",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/create_subtask": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a subtask",
+                "operationId": "post_create_subtask",
+                "parameters": [
+                    {
+                        "description": "Required. Description of the subtask",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/create_url_tool": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a Url/Tool",
+                "operationId": "post_create_url_tool",
+                "parameters": [
+                    {
+                        "description": "Required. name of the url or tool",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/delete": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a task",
+                "operationId": "get_delete_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/delete_file/{fid}": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of a file",
+                    "name": "fid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a file",
+                "operationId": "get_delete_file",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/delete_note": {
+            "parameters": [
+                {
+                    "description": "id of a note in task",
+                    "name": "note_id",
+                    "type": "string",
+                    "in": "query"
+                },
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a note of a task",
+                "operationId": "get_get_note_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/delete_subtask/{sid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a subtask",
+                "operationId": "get_delete_subtask",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/delete_url_tool/{utid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "utid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a Url/Tool",
+                "operationId": "get_delete_url_tool",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/download_file/{fid}": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of a file",
+                    "name": "fid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Download a file",
+                "operationId": "get_download_file",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/edit": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit a task",
+                "operationId": "post_edit_take",
+                "parameters": [
+                    {
+                        "description": "Title for a task",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of a task",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Date(%Y-%m-%d)",
+                        "name": "deadline_date",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time(%H-%M)",
+                        "name": "deadline_time",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from taxonomies",
+                        "name": "tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from galaxies",
+                        "name": "clusters",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of name of connectors",
+                        "name": "connectors",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of galaxies name",
+                        "name": "galaxies",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Dictionnary with connector as key and identifier as value",
+                        "name": "identifier",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of custom tags created on the instance",
+                        "name": "custom_tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time required to realize the task",
+                        "name": "time_required",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/edit_connector/{ciid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "ciid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit connector",
+                "operationId": "post_edit_connector_task",
+                "parameters": [
+                    {
+                        "description": "Required. Identifier used by modules to identify where to send data.",
+                        "name": "identifier",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/edit_subtask/{sid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit a subtask",
+                "operationId": "post_edit_subtask",
+                "parameters": [
+                    {
+                        "description": "Required. Description of the subtask",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/edit_url_tool/{sid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit a Url/Tool",
+                "operationId": "post_edit_url_tool",
+                "parameters": [
+                    {
+                        "description": "Required. name of the url or tool",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/files": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get list of files",
+                "operationId": "get_download_file",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/get_all_notes": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all notes of a task",
+                "operationId": "get_get_all_notes_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/get_connectors": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all connectors for a task",
+                "operationId": "get_get_connectors",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/get_galaxies_task": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all tags and taxonomies in a task",
+                "operationId": "get_get_galaxies_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/get_note": {
+            "parameters": [
+                {
+                    "description": "id of a note in task",
+                    "name": "note_id",
+                    "type": "string",
+                    "in": "query"
+                },
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get note of a task",
+                "operationId": "get_get_note_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/get_taxonomies_task": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all tags and taxonomies in a task",
+                "operationId": "get_get_taxonomies_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/list_subtasks": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "List subtasks of a task",
+                "operationId": "get_list_subtask",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/list_urls_tools": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "List Urls/Tools of a task",
+                "operationId": "get_list_urls_tools",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/modif_note": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit note of a task in a case",
+                "operationId": "post_modif_note_task",
+                "parameters": [
+                    {
+                        "description": "note to create or modify",
+                        "name": "note",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "id of the note",
+                        "name": "note_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/remove_assign_user": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Remove an assign user to a task",
+                "operationId": "post_remove_assign_user",
+                "parameters": [
+                    {
+                        "description": "Id of a user",
+                        "name": "user_id",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/remove_assignment": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Remove assigment of current user to the task",
+                "operationId": "get_remove_org_case",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/remove_connector/{ciid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "ciid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Remove a connector",
+                "operationId": "get_remove_connector_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/subtask/{sid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a subtask of a task",
+                "operationId": "get_get_subtask",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/take_task": {
+            "parameters": [
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Assign current user to the task",
+                "operationId": "get_assign_task",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/upload_file": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Upload a file",
+                "operationId": "post_upload_file",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/task/{tid}/url_tool/{utid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "utid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a Url/Tool of a task",
+                "operationId": "get_get_url_tool",
+                "tags": [
+                    "task"
+                ]
+            }
+        },
+        "/templating/add_connector/{cid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add connector instances to a case",
+                "operationId": "post_add_connector",
+                "parameters": [
+                    {
+                        "description": "Required. List of connectors instance. Dict with 'id' and 'identifier' as keys.",
+                        "name": "connectors",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/case/title": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a case by title",
+                "operationId": "post_get_case_title",
+                "parameters": [
+                    {
+                        "description": "Title of a case",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/case/{cid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a case template",
+                "operationId": "get_get_case_template",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/case/{cid}/add_tasks": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add a task template to a case template",
+                "operationId": "post_add_task_case",
+                "parameters": [
+                    {
+                        "description": "List of id of tasks template",
+                        "name": "tasks",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/case/{cid}/change_order/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Change the order of the task",
+                "operationId": "post_change_order",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/case/{cid}/move_task_down/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Move the task down",
+                "operationId": "get_move_task_down",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/case/{cid}/move_task_up/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a case",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of a task",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Move the task up",
+                "operationId": "get_move_task_up",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/case/{cid}/remove_task/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of the task template",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a case template",
+                "operationId": "get_remove_task_case_template",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/case/{cid}/task/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "description": "id of a task template",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a task template by case",
+                "operationId": "get_get_task_template_by_case",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/cases": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all case template",
+                "operationId": "get_get_case_templates",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/create_case": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a new case template",
+                "operationId": "post_create_case_temaplte",
+                "parameters": [
+                    {
+                        "description": "Required. Title for the template",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of the template",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from taxonomies",
+                        "name": "tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from galaxies",
+                        "name": "clusters",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of custom tags created on the instance",
+                        "name": "custom_tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time required to realize the case",
+                        "name": "time_required",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/create_case_from_template/{cid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a case from a case template",
+                "operationId": "post_create_case_from_template",
+                "parameters": [
+                    {
+                        "description": "Title of the case to create",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/create_task": {
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create new task template",
+                "operationId": "post_create_task_temaplte",
+                "parameters": [
+                    {
+                        "description": "Required. Title for the template",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of the template",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from taxonomies",
+                        "name": "tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from galaxies",
+                        "name": "clusters",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of custom tags created on the instance",
+                        "name": "custom_tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Time required to realize the task",
+                        "name": "time_required",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/delete_case/{cid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a case template",
+                "operationId": "get_delete_case_template",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/delete_task/{tid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a task template",
+                "operationId": "get_delete_task_template",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/edit_case/{cid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit a case template",
+                "operationId": "post_edit_case_temaplte",
+                "parameters": [
+                    {
+                        "description": "Title for the template",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of the template",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from taxonomies",
+                        "name": "tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from galaxies",
+                        "name": "clusters",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of custom tags created on the instance",
+                        "name": "custom_tags",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/edit_task/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a task template",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit new case template",
+                "operationId": "post_edit_case_temaplte",
+                "parameters": [
+                    {
+                        "description": "Title for the template",
+                        "name": "title",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Description of the template",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "Link to a tool or a ressource",
+                        "name": "url",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from taxonomies",
+                        "name": "tags",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "list of tags from galaxies",
+                        "name": "clusters",
+                        "type": "string",
+                        "in": "query"
+                    },
+                    {
+                        "description": "List of custom tags created on the instance",
+                        "name": "custom_tags",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/get_case_template_connector_instances/{cid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get connectors instances of a case",
+                "operationId": "get_get_case_template_connector_instance",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/get_galaxies_case/{cid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get Galaxies of a case",
+                "operationId": "get_get_galaxies_case",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/get_galaxies_task/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a task template",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get Galaxies of a task",
+                "operationId": "get_get_galaxies_task",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/get_taxonomies_case/{cid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get Taxonomies of a case",
+                "operationId": "get_get_taxonomies_case",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/get_taxonomies_task/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a task template",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get Taxonomies of a task",
+                "operationId": "get_get_taxonomies_task",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/task/{tid}": {
+            "parameters": [
+                {
+                    "description": "id of a task template",
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a task template",
+                "operationId": "get_get_task_template",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/task/{tid}/create_subtask": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a subtask",
+                "operationId": "post_create_subtask",
+                "parameters": [
+                    {
+                        "description": "Required. Description of the subtask",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/task/{tid}/create_url_tool": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Create a Url/Tool",
+                "operationId": "post_create_url_tool",
+                "parameters": [
+                    {
+                        "description": "Required. name of the url or tool",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/task/{tid}/delete_subtask/{sid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a subtask",
+                "operationId": "get_delete_subtask",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/task/{tid}/edit_subtask/{sid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit a subtask",
+                "operationId": "post_edit_subtask",
+                "parameters": [
+                    {
+                        "description": "Required. Description of the subtask",
+                        "name": "description",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/task/{tid}/list_subtasks": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "List subtasks of a task",
+                "operationId": "get_list_subtask",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/task/{tid}/subtask/{sid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a subtask of a task",
+                "operationId": "get_get_subtask",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/tasks": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get all task template",
+                "operationId": "get_get_task_templates",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/{cid}/edit_connector/{ciid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                },
+                {
+                    "description": "id of an instance",
+                    "name": "ciid",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit connector instance",
+                "operationId": "post_edit_connector",
+                "parameters": [
+                    {
+                        "description": "Required. Identifier used by modules to identify where to send data.",
+                        "name": "identifier",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/{tid}/delete_url_tool/{utid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "utid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Delete a Url/Tool",
+                "operationId": "get_delete_url_tool",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/{tid}/edit_url_tool/{sid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "sid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Edit a Url/Tool",
+                "operationId": "post_edit_url_tool",
+                "parameters": [
+                    {
+                        "description": "Required. name of the url or tool",
+                        "name": "name",
+                        "type": "string",
+                        "in": "query"
+                    }
+                ],
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/{tid}/list_urls_tools": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "List Urls/Tools of a task",
+                "operationId": "get_list_urls_tools",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating/{tid}/url_tool/{utid}": {
+            "parameters": [
+                {
+                    "name": "tid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                },
+                {
+                    "name": "utid",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Get a Url/Tool of a task",
+                "operationId": "get_get_url_tool",
+                "tags": [
+                    "templating"
+                ]
+            }
+        },
+        "/templating{cid}/remove_connector/{ciid}": {
+            "parameters": [
+                {
+                    "description": "id of a case template",
+                    "name": "cid",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                },
+                {
+                    "description": "id of an instance",
+                    "name": "ciid",
+                    "in": "path",
+                    "required": true,
+                    "type": "integer"
+                }
+            ],
+            "delete": {
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Add connector instances to a case",
+                "operationId": "delete_remove_connector",
+                "tags": [
+                    "templating"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "Flowintel API",
+        "version": "3.0.0",
+        "description": "<a href='https://github.com/flowintel/flowintel' rel='noreferrer' target='_blank'><img src='/images/flowintel-logo.png' width='200px' /></a><br />API to query Flowintel.",
+        "license": {
+            "name": "GNU Affero General Public License version 3",
+            "url": "https://www.gnu.org/licenses/agpl-3.0.html"
+        }
+    },
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "apikey": {
+            "type": "apiKey",
+            "in": "header",
+            "name": "X-API-KEY"
+        }
+    },
+    "security": [
+        {
+            "apikey": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "case",
+            "description": "Endpoints to manage cases"
+        },
+        {
+            "name": "task",
+            "description": "Endpoints to manage tasks"
+        },
+        {
+            "name": "admin",
+            "description": "Endpoints to manage admin actions"
+        },
+        {
+            "name": "analyzer",
+            "description": "Endpoints to manage analyzer"
+        },
+        {
+            "name": "case",
+            "description": "Endpoints to manage connectors"
+        },
+        {
+            "name": "custom_tags",
+            "description": "Endpoints to manage custom tags"
+        },
+        {
+            "name": "my_assignment",
+            "description": "Endpoints to manage assignments"
+        },
+        {
+            "name": "templating",
+            "description": "Endpoints to manage templates"
+        },
+        {
+            "name": "importer",
+            "description": "Endpoints to manage importer"
+        },
+        {
+            "name": "case_misp",
+            "description": "Endpoints to manage case creation from misp"
+        },
+        {
+            "name": "calendar",
+            "description": "Calendar operations"
+        }
+    ],
+    "definitions": {
+        "AddUser": {
+            "required": [
+                "email",
+                "first_name",
+                "last_name",
+                "password",
+                "role"
+            ],
+            "properties": {
+                "first_name": {
+                    "type": "string",
+                    "description": "First name for the user"
+                },
+                "last_name": {
+                    "type": "string",
+                    "description": "Last name for the user"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "Email for the user"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "Password for the user"
+                },
+                "role": {
+                    "type": "integer",
+                    "description": "Role ID (integer) for the user"
+                },
+                "org": {
+                    "type": "integer",
+                    "description": "Organisation ID (integer) for the user"
+                }
+            },
+            "type": "object"
+        },
+        "EditUser": {
+            "properties": {
+                "first_name": {
+                    "type": "string",
+                    "description": "First name for the user"
+                },
+                "last_name": {
+                    "type": "string",
+                    "description": "Last name for the user"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "Email for the user"
+                },
+                "role": {
+                    "type": "integer",
+                    "description": "Role ID (integer) for the user"
+                },
+                "org": {
+                    "type": "integer",
+                    "description": "Organisation ID (integer) for the user"
+                }
+            },
+            "type": "object"
+        },
+        "AddOrg": {
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name for the organisation"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the organisation"
+                },
+                "uuid": {
+                    "type": "string",
+                    "description": "UUID of the organisation"
+                }
+            },
+            "type": "object"
+        },
+        "EditOrg": {
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Name for the organisation"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the organisation"
+                },
+                "uuid": {
+                    "type": "string",
+                    "description": "UUID of the organisation"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "responses": {
+        "ParseError": {
+            "description": "When a mask can't be parsed"
+        },
+        "MaskError": {
+            "description": "When any error occurs on mask"
+        }
+    }
+}

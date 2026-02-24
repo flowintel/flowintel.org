@@ -1,0 +1,65 @@
+baseURL: https://flowintel.org
+languageCode: en-us
+title: Flowintel
+theme: hextra
+
+markup:
+  # allow raw html
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - '\['
+            - '\]'
+          - - $$
+            - $$
+          inline:
+          - - '\('
+            - '\)'
+        enable: true
+
+  # enable hextra syntax highlight
+  highlight:
+    noClasses: false
+
+enableInlineShortcodes: true
+
+outputs:
+  home: [HTML]
+  page: [HTML]
+  section: [HTML, RSS]
+  news: [HTML, RSS]
+
+taxonomies:
+  series: series
+  tags: tags
+
+menu:
+  main:
+    - name: News
+      url: /news
+      weight: 1
+    - name: API
+      url: /api
+      weight: 2
+
+params:
+    
+  navbar:
+    displayTitle: true
+    displayLogo: false
+    
+  footer:
+    displayCopyright: false
+    displayPoweredBy: false
+    
+  news:
+    list:
+      sortBy: date
+      sortOrder: desc
+
+permalinks:
+  news: "/:year/:month/:day/:slug/"
